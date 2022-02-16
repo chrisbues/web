@@ -1,0 +1,14 @@
+---
+title: My Second Brain
+---
+
+Lately I've been doing a lot of reading around [Digital Gardens](https://nesslabs.com/digital-garden-set-up) and how the concept might help me motivate myself to finally publish more online.
+
+In short, a Digital Garden is a cross between a blog and a collection of random notes. Less structed than a blog, but more of a knowledge graph of thoughts, ideas and collections.
+
+Since I've just started this, there's not much here right now.
+
+###### About Me
+Currently, I serve as the Spyglass Practice Lead at [Catapult Systems](https://www.catapultsystems.com/). I previously worked in Higher Education for 20 years.
+
+My [LinkedIn](https://www.linkedin.com/in/chrisbues) has everything you need. Feel free to connect to me.

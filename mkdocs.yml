@@ -1,0 +1,52 @@
+site_name: My Digital Garden
+
+theme:
+    name: 'material'
+    # Add tabs
+    features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs.sticky
+    palette:
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+# Extensions
+markdown_extensions:
+#  - footnotes
+  - abbr
+  - pymdownx.snippets
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - meta
+
+plugins:
+#  - roamlinks
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - javascripts/tablesort.js
+
+extra_css:
+  - stylesheets/extra.css
+
+
