@@ -10,8 +10,8 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs.sticky
+    - content.code.annotate
     palette:
-
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -39,6 +39,9 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
   - meta
 #  - pymdownx.emoji:
 #      emoji_index: !!python/name:materialx.emoji.twemoji
@@ -56,9 +59,9 @@ extra_css:
 
 extra:
   social:
-    -icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/twitter
       link: https://twitter.com/chrisbues
-    -icon: fontawesome/brands/github
+    - icon: fontawesome/brands/github
       link: https://github.com/chrisbues
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/chrisbues

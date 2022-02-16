@@ -2,6 +2,7 @@
 title: "Notes on System.Collections.Generic in PowerShell"
 tags:
 - PowerShell
+template: page.html
 ---
 
 For a lot of the reporting I need to do out of 365, I often end up with tons of data to parse.
