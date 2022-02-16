@@ -2,6 +2,8 @@ site_name: My Digital Garden
 
 theme:
     name: 'material'
+    icon: material/microsoft/azure
+    custom_dir: overrides
     # Add tabs
     features:
     - navigation.tabs
@@ -38,6 +40,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - meta
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
 #  - roamlinks
@@ -48,5 +53,14 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  social:
+    -icon: fontawesome/brands/twitter
+      link: https://twitter.com/chrisbues
+    -icon: fontawesome/brands/github
+      link: https://github.com/chrisbues
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/chrisbues
 
 
