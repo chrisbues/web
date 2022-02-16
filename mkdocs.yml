@@ -2,7 +2,7 @@ site_name: My Digital Garden
 
 theme:
     name: 'material'
-    icon: material/microsoft/azure
+    #icon: material/microsoft/azure
     #custom_dir: overrides
     # Add tabs
     features:
