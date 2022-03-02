@@ -1,13 +1,13 @@
 ---
-title: "Sentinel - AAD Sign-In Logs"
+title: "AAD Sign-In Log Normalization"
 tags:
 - Sentinel
 - Kusto
 - AzureAD
 ---
+---
 
-# Fun with Sentinel
-I have a bunch of these queries in my back pocket. Handy for normalizing the output of the Sign-In logs.
+Normalizing AAD Signin Logs
 
 ```kusto
 let AADLogs = SigninLogs
