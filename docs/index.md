@@ -9,4 +9,6 @@ In short, a Digital Garden is a cross between a blog and a collection of random 
 Since I've just started this, there's not much here right now.
 
 ###### About Me
-Currently, I serve as the Spyglass Practice Lead at [Catapult Systems](https://www.catapultsystems.com/). I previously worked in Higher Education for 20 years.
+I'm a Customer Engineer at [Microsoft](https://www.microsoft.com) in Health and Life Sciences. 
+
+Previously, I was the Spyglass Practice Lead at [Catapult Systems](https://www.catapultsystems.com/), and prior to that I spent 20 years in Higher Education.
