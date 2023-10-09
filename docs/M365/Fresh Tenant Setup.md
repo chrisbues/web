@@ -265,8 +265,7 @@ After installing, configure the Active Directory requirements listed below.
 - Enable compliance policy evaluation for all platforms
 - Enable app sync
 - Enable App protection policy evaluation
-![Pasted image 20230927120417.png](elements/Pasted%20image%2020230927120417.png)
-
+![](elements/intune_mde_connector.png)
 
 ## Microsoft Purview
 
