@@ -105,19 +105,51 @@ Enable EntraID LAPS
 
 ## [Intune](https://endpoint.microsoft.com/#home)
 
+### [Tenant Administration](https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/~/tenantStatus)
+
+### [Defender for Endpoint Connector](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/TenantAdminConnectorsMenu/~/windowsDefenderATP)
+- Enable compliance policy evaluation for all platforms
+- Enable app sync
+- Enable App protection policy evaluation
+![](elements/intune_mde_connector.png)
+
+
 ### [Devices](https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview)
 
 #### [Enroll Devices](https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/enrollDevices)
 
-##### Windows enrollment - Automatic Enrollment
-  ![intune_auto_enrollment](elements/intune_auto_enrollment.png)
-  
-##### Windows enrollment - Autopilot deployment
+##### [Windows Enrollment](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/~/windowsEnrollment)
+
+**Windows enrollment - Automatic Enrollment**  ![intune_auto_enrollment](elements/intune_auto_enrollment.png)
+
+**[Windows enrollment - Autopilot deployment Profiles](https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/AutopilotDeploymentProfiles.ReactView)**
 
 Create a new Autopilot deployment profile
 
 ![intune_autopilot_profile](elements/intune_autopilot_profile.png)
 ![intune_autopilot_profile_1](elements/intune_autopilot_profile_1.png)
+
+##### [iOS Enrollment](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesIosMenu/~/iosEnrollment)
+
+**Configure Apple MDM Push Certificate**
+Instructions: [Get an Apple MDM Push certificate for Intune | Microsoft Learn](https://learn.microsoft.com/en-us/mem/intune/enrollment/apple-mdm-push-certificate-get)
+
+![](elements/intune_apple_mdm_cert.png)
+
+**Enrollment Profile**
+Configure an enrollment profile
+[Enrollment type profiles - Microsoft Intune admin center](https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/UserInitiatedEnrollmentProfilesListBlade)
+
+Create a profile that allows user choice of type of device (corporate vs user), target all users.
+![](elements/intune_apple_enrollment_profile.png)
+
+
+##### [Android Enrollment](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesAndroidMenu/~/androidEnrollment)
+Instructions: [Android device enrollment guide for Microsoft Intune | Microsoft Learn](https://learn.microsoft.com/en-us/mem/intune/fundamentals/deployment-guide-enrollment-android#enable-enrollment-of-android-for-work-devices)
+
+Managed Google Play Account Linking
+
+![](elements/intune_android_linking.png)
 ### [Apps](https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsMenu/~/overview)
 
 #### [Windows](https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsWindowsMenu/~/windowsApps)
@@ -257,15 +289,6 @@ After installing, configure the Active Directory requirements listed below.
 	- Add the gMSA in the portal
 	  ![Adding a gMSA account](elements/mdi_gmsa_account.png)
 
-## Intune
-
-### [Tenant Administration](https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/~/tenantStatus)
-
-### Defender for Endpoint Connector
-- Enable compliance policy evaluation for all platforms
-- Enable app sync
-- Enable App protection policy evaluation
-![](elements/intune_mde_connector.png)
 
 ## Microsoft Purview
 

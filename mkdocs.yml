@@ -1,6 +1,7 @@
 site_name: Chris Bues # Change this to your site name
 site_description: My digital garden
 site_url: https://www.chrisbues.com/ # Change this to your site URL
+docs_dir: docs
 
 theme:
   name: "material"
