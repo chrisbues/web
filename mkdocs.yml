@@ -67,3 +67,14 @@ extra:
       link: https://fosstodon.org/@squidfunk
     - icon: fontawesome/brands/github
       link: https://github.com/chrisbues
+  analytics:
+    provider: google
+    property: G-4EP6NGCTL3
+
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of my documentation and whether users
+      find what they're searching for. With your consent, you're helping me to
+      make my documentation better.
