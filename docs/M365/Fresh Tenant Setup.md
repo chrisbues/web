@@ -97,11 +97,35 @@ CloudTrustDisplay  :
 
 ### [Device Settings](https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings/menuId/Overview)
 
-Enable EntraID LAPS 
+#### [EntraID Local Admin Password Solution](https://portal.azure.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings/menuId~/null)
 
 ![entra_device_laps](elements/entra_device_laps.png)
 
 >[!tip] [LAPS docs](https://learn.microsoft.com/en-us/mem/intune/protect/windows-laps-overview)
+
+#### [Enterprise State Roaming](https://portal.azure.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/RoamingSettings/menuId~/null)
+Enable Enterprise State Roaming
+![](elements/entra_devices_esr.png)
+
+### Identity Protection
+
+#### Multifactor authentication registration policy
+
+- Create a AAD group called Service Accounts, add the AzureAD Connect sync account
+- Enable the policy, targeting all users and excluding 
+
+### Diagnostic Settings
+[:octicons-link-24: Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/DiagnosticSettings)    [:octicons-book-16: Docs](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings)
+
+- Enable all diagnostic settings to log to your Sentinel's log analytics workspace
+  ![](elements/entra_diag_setings.png)
+  
+### Global Secure Access
+
+https://entra.microsoft.com/#view/Microsoft_Azure_Network_Access/Welcome.ReactView
+
+
+
 
 ## [Intune](https://endpoint.microsoft.com/#home)
 
@@ -158,6 +182,13 @@ Add app -> Microsoft 365 Apps for Windows 10 and Later. Assign to all devices.
 
 ![intune_windows_m365_apps](elements/intune_windows_m365_apps.png)
 ![intune_windows_m365_apps_1](elements/intune_windows_m365_apps_1.png)
+
+#### iOS
+[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsIosMenu/~/iosApps)
+[:octicons-book-16: Docs](https://learn.microsoft.com/en-us/mem/intune/apps/apps-add)
+
+##### Defender for Endpoint on iOS
+
 
 ### [Endpoint security](https://endpoint.microsoft.com/#view/Microsoft_Intune_Workflows/SecurityManagementMenu/~/overview)
 
@@ -239,8 +270,11 @@ In the Defender Portal, go to [Settings -> Cloud Apps](https://security.microsof
 
 ![mdca_app_connectors_m365](elements/mdca_app_connectors_m365.png)
 
+#### [SIEM Agents](https://security.microsoft.com/cloudapps/settings?tabid=siemAgents)
 
-
+- Add the Azure Sentinel integration
+![](elements/mdca_siem_agents.png)
+![](elements/mdca_siem_agents_sentinel_1.png)
 ### MDE
 In the Defender Portal, go to [Settings -> Endpoints](https://security.microsoft.com/securitysettings/endpoints/integration)
 
@@ -337,4 +371,28 @@ Connect-IPPSSession
 Set-PolicyConfig -EnableLabelCoauth:$true
 ```
 
+### DLP
+
+#### Endpoint DLP
+
+##### Settings
+[:octicons-link-24: Portal](https://compliance.microsoft.com/datalossprevention/endpointdlpsettings)
+[:octicons-book-16: Docs](https://learn.microsoft.com/en-us/purview/dlp-configure-endpoint-settings)
+
+In Settings, change the following:
+- Advanced classification scanning and protection: `On`
+
+### MIP Scanner
+[:octicons-link-24: Portal](https://compliance.microsoft.com/compliancesettings/scanner_onboarding)
+[:octicons-book-16: Docs](https://learn.microsoft.com/en-us/purview/deploy-scanner)
+
+Prerequisites
+- Service account in AD, exclude from MFA registration and CAs
+- SQL server for the scanner, as well as a windows server.
+
+Deployment
+1. Create a Scanner Cluster
+   ![](elements/purview_mip_scanner_cluster.png)
+2. Create a Content Scan Job. Be sure to disable any of the auto options - this will just be for scanning.
+   ![](elements/purview_mip_scanner_scan_job.png)
 
