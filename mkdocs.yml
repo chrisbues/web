@@ -50,6 +50,9 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
   - admonition
   - attr_list
   - pymdownx.emoji:
