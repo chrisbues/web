@@ -167,7 +167,29 @@ Configure an enrollment profile
 Create a profile that allows user choice of type of device (corporate vs user), target all users.
 ![](elements/intune_apple_enrollment_profile.png)
 
+**Apple Configurator Profile**
+[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/AppleConfiguratorMenuBlade/~/profiles)
+[:octicons-book-16: Docs](https://learn.microsoft.com/en-us/mem/intune/enrollment/apple-configurator-enroll-ios)
 
+There are two options for Apple Config profile - with user affinity and without. For testing, enrollment with User Affinity with the Company Portal app mimics how devices might be distributed to end users.
+1. Create a new Enrollment Profile. On the settings step, select:
+   User affinity: `Enroll with User Affinity`
+   Select where users must authenticate: `Company Portal`
+2. Export the profile you just created. Copy the URL.
+   ![](elements/intune_apple_config_export_profile.png)
+3. Create a csv file with the serial numbers of iPads you wish to enroll.
+   `Serial number,device details`
+4. Upload the csv file in the portal under [Devices](https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/AppleConfiguratorMenuBlade/~/devices). Assign the profile you just created.
+   ![](elements/intune_apple_config_add_devices.png)
+5. In Apple Configurator, choose Settings -> Servers. Click + to add a server. Add the URL you copied from step 2.
+   ![](elements/apple_config_add_server.png)
+6. Connect a device, and at the main screen, click Prepare. Leave the default options unchanged.
+   ![](elements/apple_config_prepare_1.png)
+7. Choose the Intune MDM server defined in Step 5.
+   ![](elements/apple_config_prepare_2.png)
+8. Skip Apple Business Manager sign-in if prompted. At the Organization screen select a previous org or create a new one. This is shown in the settings app in iOS.
+9. Choose to generate a new supervision Identity or reuse an existing one.
+10. Choose which steps to display in the Setup Assistant. Click Prepare to start the process.
 ##### [Android Enrollment](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesAndroidMenu/~/androidEnrollment)
 Instructions: [Android device enrollment guide for Microsoft Intune | Microsoft Learn](https://learn.microsoft.com/en-us/mem/intune/fundamentals/deployment-guide-enrollment-android#enable-enrollment-of-android-for-work-devices)
 

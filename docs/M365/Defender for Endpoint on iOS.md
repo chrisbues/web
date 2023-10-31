@@ -14,11 +14,10 @@ tags:
 The deployment and configuration varies based on if the iOS devices are supervised or unsupervised.
 
 ## Deploy Defender Endpoint App to iOS devices
-[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsIosMenu/~/iosApps)
+[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsIosMenu/~/iosApps)  
 [:octicons-book-16: Docs](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/ios-install?view=o365-worldwide#deployment-steps-applicable-for-both-supervised-and-unsupervised-devices)
 
-*Applies to: Supervised and unsupervised
-Target: Users*
+*Applies to: Supervised and unsupervised devices*
 
 1. Add the iOS store app for Microsoft Defender, target all users you want to have Defender for Endpoint. As of writing, the name in the App Store is Microsoft Defender: Security.
    ![](elements/intune_ios_apps_mde.png)
@@ -26,11 +25,10 @@ Target: Users*
 ## Configure Defender for Endpoint
 
 ### App Supervision Policy
-[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsMenu/~/appConfig)
+[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsMenu/~/appConfig)  
 [:octicons-book-16: Docs](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/ios-install?view=o365-worldwide#configure-supervised-mode-via-microsoft-intune)
 
-*Applies to: Supervised and unsupervised devices
-Target: All managed devices
+*Applies to: Supervised and unsupervised devices*
 
 This is confusing in the docs, but because it uses a token that will be resolved on the device, you can safely deploy this policy to both supervised and unsupervised devices.
 
@@ -41,16 +39,13 @@ This is confusing in the docs, but because it uses a token that will be resolved
    Type: `string`
    Value: `{{issupervised}}`
    ![](elements/intune_mde_app_config_supervised_1.png)
-3. Target all devices.
-   ![](elements/intune_mde_app_config_supervised_2.png)
-
+3. Target both supervised and unsupervised devices. 
 
 ### Onboarding Profiles
-[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsMenu/~/appConfig)
+[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsMenu/~/appConfig)  
 [:octicons-book-16: Docs](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/ios-install?view=o365-worldwide#automated-onboarding-setup-only-for-unsupervised-devices)
 
 *Applies to:  Unsupervised devices
-Target: Users
 
 For unsupervised devices, there are two ways to finalize the configuration of Defender for Endpoint after its been deployed.
 
@@ -80,7 +75,20 @@ For unsupervised devices, there are two ways to finalize the configuration of De
 3. To disable the On/Off Toggle for the VPN in the Defender app itself, add the following key/value pair:
    Key: `EnableVPNToggleInApp`
    Value: `TRUE`
+4. Target unsupervised devices
 
-### Control Filter 
+### Control Filter
+[:octicons-link-24: Portal](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/configuration)  
+[:octicons-book-16: Docs](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/ios-install?view=o365-worldwide#device-configuration-profile-control-filter)
 
-TBD
+*Applies to:  Supervised devices*
+
+The Control Filter allows Defender for Endpoint's Web Protection **without** the loopback VPN whatsoever. This does not work with other always-on VPNs.
+
+1. Create a Device Config profile with the following settings:
+   Platform: `iOS/iPadOS`
+   Profile Type: `Templates`
+   Template Name: `Custom`
+2. Download the [ControlFilterZeroTouch .mobileconfig profile](https://aka.ms/mdeiosprofilesupervisedzerotouch) and upload it.
+   ![](elements/intune_mde_control_filter.png)
+3. Target supervised devices. If you accidently target unsupervised it won't apply on those.
