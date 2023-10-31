@@ -35,9 +35,9 @@ This is confusing in the docs, but because it uses a token that will be resolved
 1. Create an app configuration policy for Managed Devices for platform iOS and targeted app Microsoft Defender: Security
    ![](elements/intune_mde_app_config_supervised.png)
 2. Use the configuration designer to set a string key/value pair
-   Key: `issupervised`
-   Type: `string`
-   Value: `{{issupervised}}`
+   Key: `issupervised`  
+   Type: `string`  
+   Value: `{{issupervised}}`  
    ![](elements/intune_mde_app_config_supervised_1.png)
 3. Target both supervised and unsupervised devices. 
 
@@ -49,32 +49,32 @@ This is confusing in the docs, but because it uses a token that will be resolved
 
 For unsupervised devices, there are two ways to finalize the configuration of Defender for Endpoint after its been deployed.
 
-**Zero-Touch onboarding:** This automatically configures Defender for Endpoint without any user interaction. Recommended.
+**Zero-Touch onboarding:** This automatically configures Defender for Endpoint without any user interaction. Recommended.  
 **Simplified onboarding:** This requires users to [open Defender to finalize onboarding](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/ios-install?view=o365-worldwide#complete-onboarding-and-check-status) *before* the VPN functions.
 
 1. Create an device configuration policy for iOS/iPadOS devices with the template type VPN with the following settings
-   Connection Name = `Microsoft Defender for Endpoint`
-   VPN server address = `127.0.0.1`
-   Auth method = `Username and password`
-   Split Tunneling = `Disable`
-   VPN identifier = `com.microsoft.scmx`
-   For Zero-Touch onboarding:
-   Key/Value Pairs:
-      Key: `SilentOnboard`
-      Value: `True`
-  For Simplified onboarding:
-  Key/Value Pairs:
-      Key: `AutoOnboard`
-      Value: `True`
-   Type of Automatic VPN = On-demand VPN
-   Add a on-demand rule:
-      I want to do the following:  `Connect VPN`
-      I want to restrict to: `All domains`
-2. To prevent users from disabling the VPN in iOS Settings, set
-   Block users from disabling automatic VPN: `Yes`
-3. To disable the On/Off Toggle for the VPN in the Defender app itself, add the following key/value pair:
-   Key: `EnableVPNToggleInApp`
-   Value: `TRUE`
+   Connection Name = `Microsoft Defender for Endpoint`  
+   VPN server address = `127.0.0.1`  
+   Auth method = `Username and password`  
+   Split Tunneling = `Disable`  
+   VPN identifier = `com.microsoft.scmx`  
+   For Zero-Touch onboarding:  
+   Key/Value Pairs:  
+      Key: `SilentOnboard`  
+      Value: `True`  
+  For Simplified onboarding:  
+  Key/Value Pairs:  
+      Key: `AutoOnboard`  
+      Value: `True`  
+   Type of Automatic VPN = On-demand VPN  
+   Add a on-demand rule:  
+      I want to do the following:  `Connect VPN`  
+      I want to restrict to: `All domains`  
+2. To prevent users from disabling the VPN in iOS Settings, set  
+   Block users from disabling automatic VPN: `Yes`  
+3. To disable the On/Off Toggle for the VPN in the Defender app itself, add the following key/value pair:  
+   Key: `EnableVPNToggleInApp`  
+   Value: `TRUE`  
 4. Target unsupervised devices
 
 ### Control Filter
@@ -86,9 +86,9 @@ For unsupervised devices, there are two ways to finalize the configuration of De
 The Control Filter allows Defender for Endpoint's Web Protection **without** the loopback VPN whatsoever. This does not work with other always-on VPNs.
 
 1. Create a Device Config profile with the following settings:
-   Platform: `iOS/iPadOS`
-   Profile Type: `Templates`
-   Template Name: `Custom`
+   Platform: `iOS/iPadOS`  
+   Profile Type: `Templates`  
+   Template Name: `Custom`  
 2. Download the [ControlFilterZeroTouch .mobileconfig profile](https://aka.ms/mdeiosprofilesupervisedzerotouch) and upload it.
    ![](elements/intune_mde_control_filter.png)
 3. Target supervised devices. If you accidently target unsupervised it won't apply on those.
